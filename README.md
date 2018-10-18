@@ -1,4 +1,4 @@
-# CloudBot
+# CloudBot [![Build Status](https://travis-ci.org/nikolas/CloudBot.svg?branch=dev)](https://travis-ci.org/nikolas/CloudBot)
 
 CloudBot is a simple, fast, expandable open-source Python IRC Bot!
 
