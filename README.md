@@ -4,13 +4,7 @@ CloudBot is a simple, fast, expandable open-source Python IRC Bot!
 
 ## Getting CloudBot
 
-There are currently four different branches of this repository, each with a different level of stability:
- - **gonzobot** *(stable)*: This branch contains everything in the **master** branch plus additional plugins added for Snoonet IRC. This branch is the currently maintained branch which will also contain many fixes for various bugs from the master branch.
- - **gonzobot-dev** *(unstable)*: This branch is based off of the **gonzobot** branch and includes new plugins that are not fully tested.
- - **master** *(stable (old))*: This branch contains stable, tested code. This branch is based directly on the upstream master branch and is not currently maintained.
- - **python3.4** *(unstable (old))*: This is the outdated testing branch from the upstream repo.
-
-New releases will be pushed from **python3.4** to **master** whenever we have a stable version to release. These changes will be merged into **gonzobot** then deployed. This should happen on a fairly regular basis, so you'll never be too far behind the latest improvements.
+I just forked this from edwardslabs so the branches are all messed up. Use the `dev` branch for submitting pull requests. I'll eventually fix this and just use `master`.
 
 ## Installing CloudBot
 
