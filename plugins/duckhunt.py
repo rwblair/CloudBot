@@ -13,8 +13,12 @@ from cloudbot.util import database
 from cloudbot.util.formatting import pluralize_auto
 
 duck_tail = "・゜゜・。。・゜゜"
-duck = ["\_o< ", "\_O< ", "\_0< ", "\_\u00f6< ", "\_\u00f8< ", "\_\u00f3< "]
-duck_noise = ["QUACK!", "FLAP FLAP!", "quack!"]
+duck = [
+    "\_ø< ", "\_Ø< ",
+    "\_o< ", "\_O< ", "\_0< ",
+    "\_\u00f6< ", "\_\u00f8< ", "\_\u00f3< "
+]
+duck_noise = ["QUACK!", "FLAP FLAP!", "quack!", "QuAaAaAACk"]
 
 table = Table(
     'duck_hunt',
@@ -325,24 +329,22 @@ def attack(event, nick, chan, message, db, conn, notice, attack):
     out = ""
     if attack == "shoot":
         miss = [
-            "WHOOSH! You missed the duck completely!", "Your gun jammed!",
-            "Better luck next time.",
-            "WTF?! Who are you, Kim Jong Un firing missiles? You missed."
+            "uhhh. You missed the duck completely!", "Your gun jammed!",
+            "The duck somehow survived your brutal attack. Be nice to ducks. Try being friends next time."
         ]
-        no_duck = "There is no duck! What are you shooting at?"
-        msg = "{} you shot a duck in {:.3f} seconds! You have killed {} in {}."
-        scripter_msg = "You pulled the trigger in {:.3f} seconds, that's mighty fast. Are you sure you aren't a script? Take a 2 hour cool down."
+        no_duck = ".bang - k, did i get it?"
+        msg = "{} you shot a duck in {:.3f} seconds! You've killed {} in {}."
+        scripter_msg = "You pulled the trigger in {:.3f} seconds, that's really fast. Are you sure you aren't a bot? Take a 2 hour cool down."
         attack_type = "shoot"
     else:
         miss = [
             "The duck didn't want to be friends, maybe next time.",
             "Well this is awkward, the duck needs to think about it.",
-            "The duck said no, maybe bribe it with some pizza? Ducks love pizza don't they?",
-            "Who knew ducks could be so picky?"
+            "The duck said no, maybe bribe it with some mota? Ducks love mota don't they?",
         ]
-        no_duck = "You tried befriending a non-existent duck. That's freaking creepy."
-        msg = "{} you befriended a duck in {:.3f} seconds! You have made friends with {} in {}."
-        scripter_msg = "You tried friending that duck in {:.3f} seconds, that's mighty fast. Are you sure you aren't a script? Take a 2 hour cool down."
+        no_duck = "You tried befriending a non-existent duck. Some people would say that's creepy. But you're probably just lonely. Get off IRC!"
+        msg = "{} you made friends a duck in {:.3f} seconds! You've made friends with {} in {}."
+        scripter_msg = "You tried friending that duck in {:.3f} seconds, that's fast as hell. Are you sure you aren't a bot? Take a 2 hour cool down."
         attack_type = "friend"
 
     if not status['game_on']:

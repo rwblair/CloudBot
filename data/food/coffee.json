@@ -4,35 +4,18 @@
     ],
     "parts": {
         "temperature": [
-            "hot",
-            "cold",
-            "iced",
-            "room temperature",
-            "lukewarm"
+            "hot"
         ],
         "size": [
             "large",
             "medium",
-            "small",
-            "grande",
-            "venti",
-            "tall"
+            "small"
         ],
         "flavor": [
-            "vanilla",
-            "caramel",
-            "white chocolate",
-            "hazelnut",
-            "cinnamon"
+            "coffee-flavored"
         ],
         "coffee": [
-            "americano",
-            "cubano",
-            "cappuccino",
-            "latte",
-            "mocha",
-            "macchiato",
-            "breve"
+            "cup of normal freaking drip coffee"
         ],
         "shots": [
             "one shot",
