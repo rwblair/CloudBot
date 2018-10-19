@@ -342,7 +342,7 @@ def attack(event, nick, chan, message, db, conn, notice, attack):
             "Well this is awkward, the duck needs to think about it.",
             "The duck said no, maybe bribe it with some mota? Ducks love mota don't they?",
         ]
-        no_duck = "You tried befriending a non-existent duck. Some people would say that's creepy. But you're probably just lonely. Get off IRC!"
+        no_duck = "You tried befriending a non-existent duck. Some people would say that's creepy. But you're probably just lonely. Look up some funny youtube videos."
         msg = "{} you made friends a duck in {:.3f} seconds! You've made friends with {} in {}."
         scripter_msg = "You tried friending that duck in {:.3f} seconds, that's fast as hell. Are you sure you aren't a bot? Take a 2 hour cool down."
         attack_type = "friend"
@@ -403,6 +403,22 @@ def bang(nick, chan, message, db, conn, notice, event):
     """- when there is a duck on the loose use this command to shoot it."""
     with chan_locks[conn.name][chan.casefold()]:
         return attack(event, nick, chan, message, db, conn, notice, "shoot")
+
+
+@hook.command("bait", autohelp=False)
+def bait(nick, chan, message, db, conn, notice, event):
+    """- Throw some duck bait."""
+    baits = [
+        'jellybeans',
+        'duckpops',
+        'things that ducks like to eat',
+        'blue zarf',
+        'vic\'s pizza',        
+    ]
+    with chan_locks[conn.name][chan.casefold()]:
+        msg = 'You throw some {} out to the chan. Let\'s see if any ducks take teh bait...'.format(
+            random.choice(baits))
+        return msg
 
 
 @hook.command("befriend", autohelp=False)
