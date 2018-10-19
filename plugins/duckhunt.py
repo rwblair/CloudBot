@@ -420,7 +420,7 @@ def bait(nick, chan, message, db, conn, notice, event):
     with chan_locks[conn.name][chan.casefold()]:
         bait = random.choice(baits)
         msg = 'You throw some {} out to the chan. Let\'s see if any ducks take teh bait... {}'.format(
-            bait[0], bait[1])
+            bait[0], bait[1] if len(bait) > 1 else '')
         return msg
 
 
