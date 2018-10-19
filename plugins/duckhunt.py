@@ -50,15 +50,15 @@ status_table = Table(
 )
 
 """
-game_status structure 
-{ 
+game_status structure
+{
     'network':{
         '#chan1':{
-            'duck_status':0|1|2, 
-            'next_duck_time':'integer', 
+            'duck_status':0|1|2,
+            'next_duck_time':'integer',
             'game_on':0|1,
             'no_duck_kick': 0|1,
-            'duck_time': 'float', 
+            'duck_time': 'float',
             'shoot_time': 'float',
             'messages': integer,
             'masks' : list
@@ -409,15 +409,16 @@ def bang(nick, chan, message, db, conn, notice, event):
 def bait(nick, chan, message, db, conn, notice, event):
     """- Throw some duck bait."""
     baits = [
-        'jellybeans',
-        'duckpops',
-        'things that ducks like to eat',
-        'blue zarf',
-        'vic\'s pizza',        
+        ('jellybean-flavored burritos', '.🌯 , `.'),
+        ('duckpops', '—o 🍬 🍭'),
+        ('things that ducks like to eat', ''),
+        ('blue zarf', '💊. . .💊'),
+        ('vic\'s pizza', '🍕🍕'),
     ]
     with chan_locks[conn.name][chan.casefold()]:
-        msg = 'You throw some {} out to the chan. Let\'s see if any ducks take teh bait...'.format(
-            random.choice(baits))
+        bait = random.choice(baits)
+        msg = 'You throw some {} out to the chan. Let\'s see if any ducks take teh bait... {}'.format(
+            bait[0], bait[1])
         return msg
 
 
