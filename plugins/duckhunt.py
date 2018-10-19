@@ -348,7 +348,7 @@ def attack(event, nick, chan, message, db, conn, notice, attack):
         attack_type = "friend"
 
     if not status['game_on']:
-        return "There is no hunt right now. Use .starthunt to start a game."
+        return None
     elif status['duck_status'] != 1:
         if status['no_duck_kick'] == 1:
             conn.cmd("KICK", chan, nick, no_duck)
