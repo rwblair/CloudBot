@@ -333,13 +333,13 @@ def attack(event, nick, chan, message, db, conn, notice, attack):
             "The duck somehow survived your brutal attack. Be nice to ducks. Try being friends next time."
         ]
         no_duck = ".bang - k, did i get it?"
-        msg = "{} you shot a duck in {:.3f} seconds! You've killed {} in {}."
+        msg = "{} you shot a duck in {:.3f} seconds! 🍗  You've killed {} in {}."
         scripter_msg = "You pulled the trigger in {:.3f} seconds, that's really fast. Are you sure you aren't a bot? Take a 2 hour cool down."
         attack_type = "shoot"
     else:
         miss = [
             "The duck didn't want to be friends, maybe next time.",
-            "Well this is awkward, the duck needs to think about it.",
+            "Well this is awkward, the duck needs to think about it. 🤔",
             "The duck said no, maybe bribe it with some mota? Ducks love mota don't they?",
         ]
         no_duck = "You tried befriending a non-existent duck. Some people would say that's creepy. But you're probably just lonely. Look up some funny youtube videos."
