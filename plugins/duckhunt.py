@@ -411,10 +411,10 @@ def bait(nick, chan, message, db, conn, notice, event):
     baits = [
         ('jellybean-flavored burritos', '.🌯 , `.'),
         ('duckpops', '—o 🍬 🍭'),
-        ('things that ducks like to eat', ''),
         ('blue zarf', '💊. . .💊'),
         ('vic\'s pizza', '🍕🍕'),
-        ('Wendy\'s chicken sandwich', ''),
+        ('Wendy\'s chicken sandwiches', 'I can\'t believe you wasted those!'),
+        ('frozen pierogies from grocery outlet', ''),
     ]
     with chan_locks[conn.name][chan.casefold()]:
         bait = random.choice(baits)
