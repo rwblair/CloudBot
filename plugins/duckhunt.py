@@ -13,6 +13,7 @@ from cloudbot.util import database
 from cloudbot.util.formatting import pluralize_auto
 
 duck_tails = [
+    "｡･ ﾟ･｡* ｡ +ﾟ｡･.｡* ﾟ + ｡･ﾟ･",
     "・゜゜・。。・゜゜",
     "・ ✺ 。。•・゜・。。 ✺ ・•",
     "。。・゜º•・。゜ ✺ ゜",
