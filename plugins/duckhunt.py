@@ -373,7 +373,7 @@ def attack(event, nick, chan, message, db, conn, notice, attack):
         ]
         smoke_type = random.choice(smoke_types)
 
-        pre_msg = "You smoke {} with the duck. {} And now it's your friend. :)".format(smoke_type, story)
+        pre_msg = "You smoke {} with the duck. {} You just made a new duck friend. :)".format(smoke_type, story)
         msg = "{} " + pre_msg
         no_duck = "No ducks around to smoke with, so you smoke {} with rblor.".format(smoke_type)
         scripter_msg = "You tried smoking with that duck in {:.3f} seconds!! Are you sure you aren't a bot? Take a 2 hour cool down."
