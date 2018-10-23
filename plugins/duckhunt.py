@@ -347,7 +347,38 @@ def attack(event, nick, chan, message, db, conn, notice, attack):
     status = game_status[network][chan]
 
     out = ""
-    if attack == "shoot":
+    if attack == "smoke":
+        pronoun = random.choice([
+            ('He', 'his'),
+            ('She', 'her'),
+        ])
+        duck_stories = [
+            '{} tells you about {} xmonad setup.',
+            '{} discusses gentoo.',
+            '{} discusses arch linux.',
+            '{} discusses HaikuOS.',
+            '{} discusses OpenBSD.',
+            '{} tells you about {} Amiga.',
+            '{} tells you about {} Sun station.',
+            '{} shows you {} laptop and it\'s covered with mustard and ketchup! lol.',
+        ]
+        story = random.choice(duck_stories).format(pronoun[0], pronoun[1])
+
+        smoke_types = [
+            "a bud",
+            "a joint",
+            "a spliff",
+            "a rollie",
+        ]
+        smoke_type = random.choice(smoke_types)
+
+        pre_msg = "You smoke {} with the duck. {} And now it's your friend. :)".format(smoke_type, story)
+        msg = "{} " + pre_msg
+        no_duck = "No ducks around to smoke with, so you smoke with rblor."
+        scripter_msg = "You tried smoking with that duck in {:.3f} seconds!! Are you sure you aren't a bot? Take a 2 hour cool down."
+        attack_type = "friend"
+        # TODO: add secret 420 functionality
+    elif attack == "shoot":
         miss = [
             "uhhh. You missed the duck completely! Phew! Be nice to ducks. Try being friends next time.",
             "Your gun jammed! Be nice to ducks. Try being friends next time.",
@@ -450,6 +481,13 @@ def wash(nick, chan, message, db, conn, notice, event):
     with chan_locks[conn.name][chan.casefold()]:
         msg = 'You wash the duck blood off your hands.'
         return msg
+
+
+@hook.command("smoke", autohelp=False)
+def smoke(nick, chan, message, db, conn, notice, event):
+    """- Smoke with the duck."""
+    with chan_locks[conn.name][chan.casefold()]:
+        return attack(event, nick, chan, message, db, conn, notice, "smoke")
 
 
 @hook.command("befriend", autohelp=False)
