@@ -417,7 +417,6 @@ def bait(nick, chan, message, db, conn, notice, event):
     """- Throw some duck bait."""
     baits = [
         ('jellybean-flavored burritos', '.🌯 , `.'),
-        ('duckpops', '—o 🍬 🍭'),
         ('blue zarf', '💊. . .💊'),
         ('vic\'s pizza', '🍕🍕'),
         ('Wendy\'s chicken sandwiches', 'I can\'t believe you wasted those!'),
