@@ -12,7 +12,13 @@ from cloudbot.event import EventType
 from cloudbot.util import database
 from cloudbot.util.formatting import pluralize_auto
 
-duck_tail = "・゜゜・。。・゜゜"
+duck_tails = [
+    "・゜゜・。。・゜゜",
+    "・ ✺ 。。•・゜・。。 ✺ ・•",
+    "。。・゜º•・。゜ ✺ ゜",
+    "*・゜ﾟ・*:.｡ ｡.:*・゜ﾟ・*",
+]
+
 duck = [
     "\_ø< ", "\_Ø< ",
     "\_o< ", "\_O< ", "\_0< ",
@@ -222,6 +228,7 @@ def no_duck_kick(db, text, chan, conn, notice_doc):
 
 def generate_duck():
     """Try and randomize the duck message so people can't highlight on it/script against it."""
+    duck_tail = random.choice(duck_tails)
     rt = random.randint(1, len(duck_tail) - 1)
     dtail = duck_tail[:rt] + u' \u200b ' + duck_tail[rt:]
     dbody = random.choice(duck)
