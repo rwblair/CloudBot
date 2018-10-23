@@ -18,7 +18,13 @@ duck = [
     "\_o< ", "\_O< ", "\_0< ",
     "\_\u00f6< ", "\_\u00f8< ", "\_\u00f3< "
 ]
-duck_noise = ["QUACK!", "FLAP FLAP!", "quack!", "QuAaAaAACk"]
+duck_noise = [
+    "QUACK!",
+    "FLAP FLAP!",
+    "quack!",
+    "QuAaAaAACk",
+    "QUAHFINNZKNJZCCK",
+]
 
 table = Table(
     'duck_hunt',
@@ -329,11 +335,12 @@ def attack(event, nick, chan, message, db, conn, notice, attack):
     out = ""
     if attack == "shoot":
         miss = [
-            "uhhh. You missed the duck completely!", "Your gun jammed!",
-            "The duck somehow survived your brutal attack. Be nice to ducks. Try being friends next time."
+            "uhhh. You missed the duck completely! Phew! Be nice to ducks. Try being friends next time.",
+            "Your gun jammed! Be nice to ducks. Try being friends next time.",
+            "The duck somehow survived your brutal attack. Be nice to ducks. Try being friends next time.",
         ]
-        no_duck = ".bang - k, did i get it?"
-        msg = "{} you shot a duck in {:.3f} seconds! 🍗  You've killed {} in {}."
+        no_duck = "You shoot in the air and scare away all teh ducks."
+        msg = "{} you shot a duck in {:.3f} seconds. Your hands are covered in duck blood! .wash them off, weirdo! You've killed {} in {}."
         scripter_msg = "You pulled the trigger in {:.3f} seconds, that's really fast. Are you sure you aren't a bot? Take a 2 hour cool down."
         attack_type = "shoot"
     else:
@@ -421,6 +428,14 @@ def bait(nick, chan, message, db, conn, notice, event):
         bait = random.choice(baits)
         msg = 'You throw some {} out to the chan. Let\'s see if any ducks take teh bait... {}'.format(
             bait[0], bait[1] if len(bait) > 1 else '')
+        return msg
+
+
+@hook.command("wash", autohelp=False)
+def wash(nick, chan, message, db, conn, notice, event):
+    """- Wash the duck blood off your hands."""
+    with chan_locks[conn.name][chan.casefold()]:
+        msg = 'You wash the duck blood off your hands.'
         return msg
 
 
