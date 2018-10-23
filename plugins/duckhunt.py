@@ -194,7 +194,7 @@ def start_hunt(db, chan, message, conn):
 
 def set_ducktime(chan, conn):
     global game_status
-    game_status[conn][chan]['next_duck_time'] = random.randint(int(time()) + 480, int(time()) + 3600)
+    game_status[conn][chan]['next_duck_time'] = random.randint(int(time()) + 280, int(time()) + 1600)
     # game_status[conn][chan]['flyaway'] = game_status[conn.name][chan]['next_duck_time'] + 600
     game_status[conn][chan]['duck_status'] = 0
     # let's also reset the number of messages said and the list of masks that have spoken.
