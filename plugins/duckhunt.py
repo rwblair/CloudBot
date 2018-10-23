@@ -18,7 +18,13 @@ duck = [
     "\_o< ", "\_O< ", "\_0< ",
     "\_\u00f6< ", "\_\u00f8< ", "\_\u00f3< "
 ]
-duck_noise = ["QUACK!", "FLAP FLAP!", "quack!", "QuAaAaAACk"]
+duck_noise = [
+    "QUACK!",
+    "FLAP FLAP!",
+    "quack!",
+    "QuAaAaAACk",
+    "QUAHFINNZKNJZCCK",
+]
 
 table = Table(
     'duck_hunt',
